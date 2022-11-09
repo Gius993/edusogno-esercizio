@@ -1,26 +1,18 @@
 <?php
-define('DB_SERVERNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'edusogno');
-define('DB_PORT', 8889);
+require_once __DIR__ . '/config.php';
 
-$conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
-
-if($conn && $conn->connect_error){
-    die($conn->connect_error);
-}
 $sql = "SELECT * FROM `eventi`";
 $result = $conn->query($sql);
-
+$events = [];
 if($result && $result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-        var_dump($row);
+        $events[] = $row;
     }
 }else{
     echo 'Non ci sono';
 
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +25,20 @@ if($result && $result->num_rows > 0){
 </head>
 
 <body>
-    
+    <main>
+        <h2>Pagina utente</h2>
+        <?php foreach($events as $event){?>
+            <div>
+                <ul>
+                    <li><?php echo $event['nome_evento']  ?></li>
+                    <li><?php echo $event['attendees']  ?></li>
+                    <li><?php echo $event['data_evento']  ?></li>
+                </ul>
+            </div>
+
+
+        <?php  }?>
+    </main>
 </body>
 
 </html>

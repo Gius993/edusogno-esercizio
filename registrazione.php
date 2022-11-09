@@ -1,4 +1,9 @@
+<?php
+require_once __DIR__ . '/config.php';
 
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,12 +12,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edusogno-registrazione</title>
-	
+
 </head>
 
 <body>
 	<h2>REGISTRATI</h2>
-    <form action="insert.php" method="POST">
+    <form action="register.php" method="POST">
         <p>
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome">
