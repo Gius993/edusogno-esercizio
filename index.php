@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,24 @@
 </head>
 
 <body>
+    <form action="insert.php" method="POST">
+        <p>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
 
+        </p>
+        <p>
+            <label for="cognome">Cognome</label>
+            <input type="text" name="cognome" id="cognome">
+
+        </p>
+        <p>
+            <label for="email">Nome</label>
+            <input type="text" name="email" id="email">
+
+        </p>
+        <input type="submit" value="invia">
+    </form>
 </body>
 
 </html>
