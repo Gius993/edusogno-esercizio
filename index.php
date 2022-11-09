@@ -9,7 +9,18 @@ $conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
 
 if($conn && $conn->connect_error){
     die($conn->connect_error);
-}echo('Si connette')
+}
+$sql = "SELECT * FROM `eventi`";
+$result = $conn->query($sql);
+
+if($result && $result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+        var_dump($row);
+    }
+}else{
+    echo 'Non ci sono';
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
