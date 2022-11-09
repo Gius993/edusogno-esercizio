@@ -1,4 +1,16 @@
+<?php
+define('DB_SERVERNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'root');
+define('DB_NAME', 'edusogno');
+define('DB_PORT', 8889);
 
+$conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
+
+if($conn && $conn->connect_error){
+    die($conn->connect_error);
+}echo('Si connette')
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,24 +22,7 @@
 </head>
 
 <body>
-    <form action="insert.php" method="POST">
-        <p>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
-
-        </p>
-        <p>
-            <label for="cognome">Cognome</label>
-            <input type="text" name="cognome" id="cognome">
-
-        </p>
-        <p>
-            <label for="email">Nome</label>
-            <input type="text" name="email" id="email">
-
-        </p>
-        <input type="submit" value="invia">
-    </form>
+    
 </body>
 
 </html>
