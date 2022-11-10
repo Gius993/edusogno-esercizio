@@ -1,0 +1,32 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img{
+	width: 100%;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+.container_header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+}
+
+.logo{
+	margin-left: 15px;
+}
+.nav{
+	display: flex;
+	
+}
+.li_nav{
+	margin-right: 10px;
+}

@@ -23,7 +23,10 @@ require_once __DIR__ . '/config.php';
 	<title>Document</title>
 </head>
 <body>
-	
+<?php
+        require_once __DIR__ . './header.php';
+
+    ?>
 	<h2>
 		<?php
 			echo 'Ciao ' . $_SESSION["nome"];
