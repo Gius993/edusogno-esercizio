@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 				$_SESSION['id'] = $row['id'];
 				$_SESSION['email'] = $row['email'];
 
-				Header('location: area-privata.php');
+				Header('location: ./area-privata.php');
 
 			}else{
 				echo ' la password non corriponde';

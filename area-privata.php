@@ -18,8 +18,8 @@ if($result && $result->num_rows > 0){
 }
 session_start();
 if(!isset($_SESSION['loggato']) || $_SESSION['loggato'] !== true){
-	Header("location: login.html");
-	exit;
+	Header("location: ./login.html");
+	
 }
 
 ?>
