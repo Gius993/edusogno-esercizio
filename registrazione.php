@@ -16,6 +16,10 @@ require_once __DIR__ . '/config.php';
 </head>
 
 <body>
+<?php
+        require_once __DIR__ . './header.php';
+
+    ?>
 	<h2>REGISTRATI</h2>
     <form action="register.php" method="POST">
         <p>
