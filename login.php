@@ -5,7 +5,7 @@ require_once __DIR__ . '/config.php';
 
 $email = $conn->real_escape_string($_POST['email']);
 $password = $conn->real_escape_string($_POST['password']);
-$nome = $conn->real_escape_string($_POST['nome']);
+
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
