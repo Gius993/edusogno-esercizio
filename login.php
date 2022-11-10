@@ -17,12 +17,16 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 				$_SESSION['id'] = $row['id'];
 				$_SESSION['email'] = $row['email'];
 
-				header('location: area-privata.php');
+				Header('location: area-privata.php');
 
 			}else{
 				echo ' la password non corriponde';
 			}
+		}else{
+			echo 'non ci sono account con questa email';
 		}
+	}else{
+		echo 'errore in fase di login';
 	}
 	$conn->close();
 }

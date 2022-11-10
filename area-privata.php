@@ -3,8 +3,11 @@
 require_once __DIR__ . '/config.php';
 
 $sql = "SELECT * FROM `eventi`";
+$sql = "SELECT * FROM `utenti`";
+
 $result = $conn->query($sql);
 $events = [];
+$utents = [];
 if($result && $result->num_rows > 0){
     while($row = $result->fetch_assoc()){
         $events[] = $row;
@@ -15,7 +18,7 @@ if($result && $result->num_rows > 0){
 }
 session_start();
 if(!isset($_SESSION['loggato']) || $_SESSION['loggato'] !== true){
-	header("location: login.php");
+	Header("location: login.html");
 	exit;
 }
 
@@ -37,7 +40,7 @@ if(!isset($_SESSION['loggato']) || $_SESSION['loggato'] !== true){
     ?>
     <main>
         <h2>Pagina utente</h2>
-        <?php foreach($events as $event){?>
+    	 <?php foreach($events as $event){?>
             <div>
                 <ul>
                     <li><?php echo $event['nome_evento']  ?></li>
