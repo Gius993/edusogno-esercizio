@@ -3,11 +3,11 @@
 require_once __DIR__ . '/config.php';
 
 $sql = "SELECT * FROM `eventi`";
-$sql = "SELECT * FROM `utenti`";
+
 
 $result = $conn->query($sql);
 $events = [];
-$utents = [];
+
 if($result && $result->num_rows > 0){
     while($row = $result->fetch_assoc()){
         $events[] = $row;
@@ -39,6 +39,7 @@ if(!isset($_SESSION['loggato']) || $_SESSION['loggato'] !== true){
 
     ?>
     <main>
+    <div class="welcome">Ciao <?php $_SESSION['nome']; ?> ?> ecco i tuoi eventi</div>
         <h2>Pagina utente</h2>
     	 <?php foreach($events as $event){?>
             <div>
